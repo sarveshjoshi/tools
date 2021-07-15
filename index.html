@@ -1,0 +1,138 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>~~~</title>
+  <link rel="stylesheet" href="css/pure-min.css">
+  <link rel="stylesheet" href="css/grids-responsive-min.css">
+  <link rel="stylesheet" href="css/index.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <div class="main-menu pure-menu pure-menu-horizontal pure-menu-scrollable">
+    <span class="pure-menu-heading ">Tools</span>
+    <ul class="pure-menu-list">
+        <li class="pure-menu-item" data-space-id="jsonformatter" >
+            <a href="#" class="pure-menu-link">Json Formatter</a>
+        </li>
+        <li class="pure-menu-item" data-space-id="xmlformatter" >
+            <a href="#" class="pure-menu-link">XML Formatter</a>
+        </li>
+        <li class="pure-menu-item" data-space-id="base64coder">
+            <a href="#" class="pure-menu-link">Base64 Encoder/Decoder</a>
+        </li>
+        <li class="pure-menu-item" data-space-id="urlcoder">
+            <a href="#" class="pure-menu-link">URL Encoder/Decoder</a>
+        </li>
+        <li class="pure-menu-item" data-space-id="clock">
+            <a href="#" class="pure-menu-link">Clock</a>
+        </li>
+    </ul>
+  </div>
+  <div class="pure-g menu-space">
+    
+    <div id="jsonformatter" class="pure-u-1 pure-u-md-1">
+      <div class="pure-menu pure-menu-horizontal pure-menu-scrollable">
+        <ul class="pure-menu-list">
+          <li class="pure-menu-item">
+            <a href="#" class="pure-menu-link toolbar-action" onclick="jsonExpand()">
+              Expand<img src="icon/outline_expand_more_black_24dp.png"/></a>
+          </li>
+          <li class="pure-menu-item">
+            <a href="#" class="pure-menu-link toolbar-action" onclick="jsonMinify()">
+             Minify<img src="icon/outline_expand_less_black_24dp.png"/></a>
+          </li>
+          <li class="pure-menu-item">
+            <a href="#" class="pure-menu-link toolbar-action" onclick="jsonCopy()">
+             Copy <img src="icon/outline_content_copy_black_24dp.png"/></a>
+          </li>
+        </ul>
+      </div>
+      <textarea id="json-format-area" class="pure-u-1 pure-u-md-1" rows="25"></textarea>
+    </div>
+        
+    <div id="xmlformatter" class="pure-u-1 pure-u-md-1">
+      <div class="pure-menu pure-menu-horizontal pure-menu-scrollable">
+        <ul class="pure-menu-list">
+          <li class="pure-menu-item">
+            <a href="#" class="pure-menu-link toolbar-action" onclick="xmlExpand()">
+              Expand<img src="icon/outline_expand_more_black_24dp.png"/></a>
+          </li>
+          <li class="pure-menu-item">
+            <a href="#" class="pure-menu-link toolbar-action" onclick="xmlMinify()">
+             Minify<img src="icon/outline_expand_less_black_24dp.png"/></a>
+          </li>
+          <li class="pure-menu-item">
+            <a href="#" class="pure-menu-link toolbar-action" onclick="xmlCopy()">
+             Copy <img src="icon/outline_content_copy_black_24dp.png"/></a>
+          </li>
+        </ul>
+      </div>
+      <textarea id="xml-format-area" class="pure-u-1 pure-u-md-1" rows="25"></textarea>
+    </div>
+    
+    <div id="base64coder" class="pure-u-1 pure-u-md-1">
+      <div class="pure-menu pure-menu-horizontal pure-menu-scrollable">
+        <ul class="pure-menu-list">
+          <li class="pure-menu-item">
+            <a href="#" class="pure-menu-link toolbar-action" onclick="base64Encode()">
+              Encode<img src="icon/outline_expand_more_black_24dp.png"/></a>
+          </li>
+          <li class="pure-menu-item">
+            <a href="#" class="pure-menu-link toolbar-action" onclick="base64Decode()">
+             Decode<img src="icon/outline_expand_less_black_24dp.png"/></a>
+          </li>
+        </ul>
+      </div>
+      <textarea id="base64-encoding-area" class="pure-u-1 pure-u-md-11-24 pure-u-lg-11-24 pure-u-sm-1" rows="25"></textarea>
+      <textarea id="base64-decoding-area" class="pure-u-1 pure-u-md-11-24 pure-u-lg-11-24 pure-u-sm-1" rows="25"></textarea>
+      <br/>
+    </div>
+    
+    <div id="urlcoder" class="pure-u-1 pure-u-md-1">
+      <div class="pure-menu pure-menu-horizontal pure-menu-scrollable">
+        <ul class="pure-menu-list">
+          <li class="pure-menu-item">
+            <a href="#" class="pure-menu-link toolbar-action" onclick="urlEncode()">
+              Encode<img src="icon/outline_expand_more_black_24dp.png"/></a>
+          </li>
+          <li class="pure-menu-item">
+            <a href="#" class="pure-menu-link toolbar-action" onclick="urlDecode()">
+             Decode<img src="icon/outline_expand_less_black_24dp.png"/></a>
+          </li>
+        </ul>
+      </div>
+      <textarea id="url-encoding-area" class="pure-u-11-24 pure-u-md-1 pure-u-lg-11-24 pure-u-sm-1" rows="25"></textarea>
+      <textarea id="url-decoding-area" class="pure-u-11-24 pure-u-md-1 pure-u-lg-11-24 pure-u-sm-1" rows="25"></textarea>
+    </div>
+  </div>
+    
+    <div id="clock" class="pure-u-1 pure-u-md-1">
+      <div class="pure-menu pure-menu-horizontal pure-menu-scrollable">
+        <ul class="pure-menu-list">
+          <li class="pure-menu-item">
+            <a href="#" class="pure-menu-link">Enter Epoch </a>
+          </li>
+          <li class="pure-menu-item">
+            <input class="pure-menu-link" id="epoch" onInput="updateDate()" value="0">
+          </li>
+        </ul>
+      </div>
+      <div class="pure-u-1 pure-u-md-1 pure-u-lg-1 pure-u-sm-1">
+        <p class="impure-date">Local Date</p>
+        <span id="date-local"></span>
+        </div>
+      <div class="pure-u-1 pure-u-md-1 pure-u-lg-1 pure-u-sm-1">
+        <p class="impure-date">UTC Date</p>
+        <span id="date-utc"></span>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  </div>
+  <script src="js/index.js"></script>
+</body>
+</html>

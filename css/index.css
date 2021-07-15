@@ -1,0 +1,39 @@
+.custom-restricted-width {
+        display: inline-block;
+}
+
+.pure-menu-selected {
+        background-color: #e6e6e6;
+}
+
+body {
+        padding-left: 10px;
+        padding-right: 10px;
+}
+
+button {
+        margin: 2px;
+        display: block;
+}
+
+.menu-space div {
+        visibility: none;
+}
+
+.toolbar-action {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+}
+
+textarea {
+        resize: none;
+        display: inline-block;
+}
+
+.impure-date {
+        color: purple;
+        padding: 3px;
+        margin: 3px;
+        display: inline-block;
+}
